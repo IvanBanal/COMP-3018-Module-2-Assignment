@@ -70,6 +70,14 @@ export const calculateUrgency = (ticket: Ticket) => {
  */
 export const getAllTickets = () => tickets;
 
+/**
+ * This function will get a ticket by its ID.
+ * @param id The Ticket ID.
+ * @returns The Ticket object or undefined if not found.
+ */
+export const getTicketById = (id: number) => tickets.find(ticket => ticket.id === id);
+
+
 
 
 
