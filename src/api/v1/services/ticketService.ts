@@ -64,6 +64,14 @@ export const calculateUrgency = (ticket: Ticket) => {
     return { urgencyScore: score, urgencyMessage };
 };
 
+/**
+ * This function will get all tickets.
+ * @returns Array of Ticket objects.
+ */
+export const getAllTickets = () => tickets;
+
+
+
 
 
 
