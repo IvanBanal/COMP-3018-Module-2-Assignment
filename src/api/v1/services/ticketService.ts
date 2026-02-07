@@ -14,3 +14,12 @@ export interface Ticket {
     createdAt: string;
 }
 
+// Base urgency scores.
+// Using Record<> to construct a type.
+const baseScores: Record<string, number> = {
+    critical: 50,
+    high: 30,
+    medium: 20,
+    low: 10
+};
+
