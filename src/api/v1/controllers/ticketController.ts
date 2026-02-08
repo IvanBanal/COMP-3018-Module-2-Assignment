@@ -32,3 +32,14 @@ export const createTicket = (req: Request, res: Response) => {
 export const getAllTickets = (req: Request, res: Response) => {
     res.status(HTTP_STATUS.OK).json(service.getAllTickets());
 };
+
+// Get ticket by ID.
+export const getTicketById = (req: Request, res: Response) => {
+    const ticket = service.getTicketById(Number(req.params.id));
+    if (!ticket) {
+        res.status(HTTP_STATUS.NOT_FOUND).json({ message: "Ticket not found" });
+        return;
+    }
+    
+    res.status(HTTP_STATUS.OK).json(ticket);
+};  
