@@ -43,3 +43,25 @@ export const getTicketById = (req: Request, res: Response) => {
     
     res.status(HTTP_STATUS.OK).json(ticket);
 };  
+
+// Update a ticket.
+export const updateTicket = (req: Request, res: Response) => {
+    const { priority, status } = req.body;
+
+    if (priority && !priorities.includes(priority)) {
+        res.status(HTTP_STATUS.BAD_REQUEST).json({ message: "Invalid priority. Must be one of: critical, high, medium, low" });
+        return;
+    }
+    if (status && !statuses.includes(status)) {
+        res.status(HTTP_STATUS.BAD_REQUEST).json({ message: "Invalid status. Must be one of: open, in-progress, resolved" });
+        return;
+    }
+
+    const updated = service.updateTicket(Number(req.params.id), req.body);
+    if (!updated) {
+        res.status(HTTP_STATUS.NOT_FOUND).json({ message: "Ticket not found" });
+        return;
+    }
+
+    res.status(HTTP_STATUS.OK).json(updated);
+};
