@@ -65,3 +65,14 @@ export const updateTicket = (req: Request, res: Response) => {
 
     res.status(HTTP_STATUS.OK).json(updated);
 };
+
+// Delete a ticket.
+export const deleteTicket = (req: Request, res: Response) => {
+    const deleted = service.deleteTicket(Number(req.params.id));
+    if (!deleted) {
+        res.status(HTTP_STATUS.NOT_FOUND).json({ message: "Ticket not found" });
+        return;
+    }
+
+    res.status(HTTP_STATUS.OK).json({ message: "Ticket deleted" });
+};
