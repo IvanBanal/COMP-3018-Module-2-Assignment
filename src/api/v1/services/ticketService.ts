@@ -86,9 +86,8 @@ export const createTicket = (data: any): Ticket => {
     const newTicket: Ticket = {
         // This is a simple way to generate a new ID.
         id: tickets.length + 1,
-        title: data.title,
-        description: data.description,
-        priority: data.priority,
+        // Using spread operator to copy all the properties and their values.
+        ...data,
         status: 'open',
         createdAt: new Date().toISOString()
     };
