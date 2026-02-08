@@ -97,6 +97,19 @@ export const createTicket = (data: any): Ticket => {
     return newTicket
 };
 
+/**
+ * This function will update an existing ticket.
+ * @param id Ticket ID.
+ * @param updates Object containing fields to update.
+ * @returns Upload Ticket object or null if not found.
+ */
+export const updateTicket = (id: number, updates: any) => {
+    const ticket = getTicketById(id);
+    if (!ticket) return null;
+    Object.assign(ticket, updates);
+    return ticket;
+};
+
 
 
 
