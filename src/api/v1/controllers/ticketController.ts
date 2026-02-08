@@ -76,3 +76,14 @@ export const deleteTicket = (req: Request, res: Response) => {
 
     res.status(HTTP_STATUS.OK).json({ message: "Ticket deleted" });
 };
+
+// Get a ticket with urgency.
+export const getTicketWithUrgency = (req: Request, res: Response) => {
+    const ticket = service.getTicketWithUrgency(Number(req.params.id));
+    if (!ticket) {
+        res.status(HTTP_STATUS.NOT_FOUND).json({ message: "Ticket not found" });
+        return;
+    }
+
+    res.status(HTTP_STATUS.OK).json(ticket)l;
+};
