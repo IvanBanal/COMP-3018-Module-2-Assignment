@@ -130,7 +130,7 @@ export const getTicketWithUrgency = (id: number) => {
     const ticket = getTicketById(id);
     if (!ticket) return null;
     // Using spread operator to copy all the properties and their values.
-    return {  ...ticket, ...calculateUrgency{ticket} }
+    return { ...ticket, ...calculateUrgency(ticket) };
 };
 
 
