@@ -122,6 +122,18 @@ export const deleteTicket = (id: number) => {
     return true;
 };
 
+/**
+ * This function will get a ticket with its calculated urgency.
+ * @param id Ticket ID.
+ * @returns Ticket object including urgencyScore and urgencyMessage, or null if not found.
+ */
+export const getTicketWithUrgency = (id: number) => {
+    const ticket = getTicketById(id);
+    if (!ticket) return null;
+    // Using spread operator to copy all the properties and their values.
+    return {  ...ticket, ...calculateUrgency{ticket} }
+};
+
 
 
 
