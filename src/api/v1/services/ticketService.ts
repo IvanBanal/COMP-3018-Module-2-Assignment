@@ -110,6 +110,18 @@ export const updateTicket = (id: number, updates: any) => {
     return ticket;
 };
 
+/**
+ * This function will delete a ticket by its ID.
+ * @param id Ticket ID.
+ * @returns true if deleted, and false if ticket is not found.
+ */
+export const deleteTicket = (id: number) => {
+    const index = tickets.findIndex(ticket => ticket.id === id);
+    if (index === -1) return false;
+    tickets.splice(index, 1);
+    return true;
+};
+
 
 
 
