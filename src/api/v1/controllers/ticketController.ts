@@ -85,5 +85,5 @@ export const getTicketWithUrgency = (req: Request, res: Response) => {
         return;
     }
 
-    res.status(HTTP_STATUS.OK).json(ticket)l;
+    res.status(HTTP_STATUS.OK).json(ticket);
 };
