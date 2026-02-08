@@ -1,4 +1,4 @@
-import { tickets } from "src/data/tickets";
+import { tickets } from "../../../data/tickets";
 
 /**
  * Interface representing the support ticket.
