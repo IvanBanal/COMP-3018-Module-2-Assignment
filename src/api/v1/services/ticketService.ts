@@ -77,6 +77,26 @@ export const getAllTickets = () => tickets;
  */
 export const getTicketById = (id: number) => tickets.find(ticket => ticket.id === id);
 
+/**
+ * This function will create a new ticket 
+ * @param data Object containing title, description, and priority.
+ * @returns The newly created Ticket object.
+ */
+export const createTicket = (data: any): Ticket => {
+    const newTicket: Ticket = {
+        // This is a simple way to generate a new ID.
+        id: tickets.length + 1,
+        title: data.title,
+        description: data.description,
+        priority: data.priority,
+        status: 'open',
+        createdAt: new Date().toISOString()
+    };
+
+    tickets.push(newTicket);
+    return newTicket
+};
+
 
 
 
