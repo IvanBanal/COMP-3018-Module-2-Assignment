@@ -27,3 +27,8 @@ export const createTicket = (req: Request, res: Response) => {
     const ticket = service.createTicket({ title, description, priority });
     res.status(HTTP_STATUS.CREATED).json(ticket);
 }
+
+// Get all tickets.
+export const getAllTickets = (req: Request, res: Response) => {
+    res.status(HTTP_STATUS.OK).json(service.getAllTickets());
+};
