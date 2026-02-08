@@ -30,7 +30,12 @@ export const createTicket = (req: Request, res: Response) => {
 
 // Get all tickets.
 export const getAllTickets = (req: Request, res: Response) => {
-    res.status(HTTP_STATUS.OK).json(service.getAllTickets());
+    const tickets = service.getAllTickets();
+    res.status(HTTP_STATUS.OK).json({
+        message: "Tickets retrieved",
+        count: tickets.length,
+        data: tickets
+    });
 };
 
 // Get ticket by ID.
