@@ -55,5 +55,12 @@ describe("Urgency Calculation (3 Total Tests", () => {
             status: "open",
             createdAt: date.toISOString()
         };
+
+        // Act 
+        const result = calculateUrgency(ticket);
+        
+        // Assert
+        expect(result.urgencyScore).toBe(60)
+        expect(result.urgencyMessage).toBe("High urgency. Prioritize resolution.")
     });
 });
