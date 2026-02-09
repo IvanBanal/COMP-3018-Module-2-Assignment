@@ -54,21 +54,25 @@ export const updateTicket = (req: Request, res: Response) => {
     const { priority, status } = req.body;
 
     // Edge cases validations.
-    if (!priority && !status) {
-        res.status(HTTP_STATUS.BAD_REQUEST).json({
-            message: "Request body cannot be empty"
-        });
-    }
-    if (priority && !priorities.includes(priority)) {
-        res.status(HTTP_STATUS.BAD_REQUEST).json({ message: "Invalid priority. Must be one of: critical, high, medium, low" });
+    if (!priority) {
+        res.status(HTTP_STATUS.BAD_REQUEST).json({ message: "Missing required field: priority" });
         return;
     }
-    if (status && !statuses.includes(status)) {
-        res.status(HTTP_STATUS.BAD_REQUEST).json({ message: "Invalid status. Must be one of: open, in-progress, resolved" });
+    if (!status) {
+        res.status(HTTP_STATUS.BAD_REQUEST).json({ message: "Missing required field: status"});
+        return;
+    }
+    if (!priorities.includes(priority)) {
+        res.status(HTTP_STATUS.BAD_REQUEST).json({ message: "Invalid priority. Must be one of: critical, high, medium, low"});
+        return;
+    }
+    if (!statuses.includes(status)) {
+        res.status(HTTP_STATUS.BAD_REQUEST).json({ message: "Invalid status. Must be one of: open, in-progress, resolved"});
         return;
     }
 
-    const updatedTicket = service.updateTicket(Number(req.params.id), req.body);
+    const updatedTicket = service.updateTicket(Number(req.params.id), {priority, status});
+    
     if (!updatedTicket) {
         res.status(HTTP_STATUS.NOT_FOUND).json({ message: "Ticket not found" });
         return;
