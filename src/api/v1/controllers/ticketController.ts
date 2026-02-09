@@ -98,7 +98,7 @@ export const getTicketWithUrgency = (req: Request, res: Response) => {
     res.status(HTTP_STATUS.OK).json({
         message: "Ticket urgency calculated",
         data: {
-            id: ticket.id;
+            id: ticket.id,
             title: ticket.title,
             priority: ticket.priority,
             status: ticket.status,
