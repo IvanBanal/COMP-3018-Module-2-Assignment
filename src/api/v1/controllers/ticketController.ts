@@ -90,8 +90,22 @@ export const getTicketWithUrgency = (req: Request, res: Response) => {
         return;
     }
 
+    // Calculate ticket age in days.
+    const ticketAge = Math.floor(
+        (Date.now() - new Date(ticket.createdAt).getTime()) / 86400000
+    );
+
     res.status(HTTP_STATUS.OK).json({
         message: "Ticket urgency calculated",
-        data: ticket
+        data: {
+            id: ticket.id;
+            title: ticket.title,
+            priority: ticket.priority,
+            status: ticket.status,
+            createdAt: ticket.createdAt,
+            ticketAge,
+            urgencyScore: ticket.urgencyScore,
+            urgencyMessage: ticket.urgencyMessage
+        }
     });
 };
