@@ -49,7 +49,8 @@ export const calculateUrgency = (ticket: Ticket) => {
         return { urgencyScore: 0, urgencyMessage: "Minimal. Ticket resolved." };
     }
 
-    const score = (baseScores[ticket.priority] || 0) + ageInDays(ticket.createdAt) * 2;
+    // urgencyScore formula.
+    const score = baseScores[ticket.priority] + ageInDays(ticket.createdAt) * 5; 
 
     const urgencyMessage = 
         // Using Ternary operator.
