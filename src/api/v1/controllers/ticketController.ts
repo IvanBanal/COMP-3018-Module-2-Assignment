@@ -72,7 +72,6 @@ export const updateTicket = (req: Request, res: Response) => {
     }
 
     const updatedTicket = service.updateTicket(Number(req.params.id), {priority, status});
-    
     if (!updatedTicket) {
         res.status(HTTP_STATUS.NOT_FOUND).json({ message: "Ticket not found" });
         return;
