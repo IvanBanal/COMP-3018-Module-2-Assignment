@@ -44,7 +44,7 @@ export const tickets: Ticket[] = [
         description: "PDF export fails silently",
         priority: "high",
         status: "open",
-        createdAt: "2026-01-31T10:00:00.000Z"
+        createdAt: "2026-01-30T10:00:00.000Z"
         // createdAt: "2025-01-06T10:00:00.000Z"
     },
     {
@@ -62,7 +62,7 @@ export const tickets: Ticket[] = [
         description: "Dark mode doesn't persist after refresh",
         priority: "medium",
         status: "resolved",
-        createdAt: "2026-01-30T10:00:00.000Z"
+        createdAt: "2026-01-29T10:00:00.000Z"
         // createdAt: "2025-01-05T10:00:00.000Z"
     }
 ];

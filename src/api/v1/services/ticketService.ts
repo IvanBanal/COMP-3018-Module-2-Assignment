@@ -54,11 +54,11 @@ export const calculateUrgency = (ticket: Ticket) => {
 
     const urgencyMessage = 
         // Using Ternary operator.
-        score < 25
+        score <= 25
             ? "Low urgency. Address when capacity allows."
-            : score < 60
+            : score <= 50
             ? "Moderate. Schedule for attention."
-            : score < 85
+            : score <= 75
             ? "High urgency. Prioritize resolution."
             : "Critical. Immediate attention required.";
     
