@@ -63,13 +63,16 @@ export const updateTicket = (req: Request, res: Response) => {
         return;
     }
 
-    const updated = service.updateTicket(Number(req.params.id), req.body);
-    if (!updated) {
+    const updatedTicket = service.updateTicket(Number(req.params.id), req.body);
+    if (!updatedTicket) {
         res.status(HTTP_STATUS.NOT_FOUND).json({ message: "Ticket not found" });
         return;
     }
 
-    res.status(HTTP_STATUS.OK).json(updated);
+    res.status(HTTP_STATUS.OK).json({
+        message: "Ticket updated successfully",
+        data: updatedTicket
+    });
 };
 
 // Delete a ticket.

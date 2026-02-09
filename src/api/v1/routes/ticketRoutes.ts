@@ -3,7 +3,7 @@ import * as controller from "../controllers/ticketController"
 
 const router = Router();
 
-// CRUD endpoints (/api/v1/ticket).
+// CRUD endpoints (/api/v1/tickets).
 router.post('/', controller.createTicket);
 router.get('/', controller.getAllTickets);
 router.get('/:id', controller.getTicketById);
