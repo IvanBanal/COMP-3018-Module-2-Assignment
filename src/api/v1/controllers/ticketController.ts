@@ -53,6 +53,7 @@ export const getTicketById = (req: Request, res: Response) => {
 export const updateTicket = (req: Request, res: Response) => {
     const { priority, status } = req.body;
 
+    // Edge cases validations.
     if (priority && !priorities.includes(priority)) {
         res.status(HTTP_STATUS.BAD_REQUEST).json({ message: "Invalid priority. Must be one of: critical, high, medium, low" });
         return;
