@@ -49,16 +49,16 @@ export const calculateUrgency = (ticket: Ticket) => {
         return { urgencyScore: 0, urgencyMessage: "Minimal. Ticket resolved." };
     }
 
-    // urgencyScore formula.
+    // urgencyScore  formula.
     const score = baseScores[ticket.priority] + ageInDays(ticket.createdAt) * 5; 
 
     const urgencyMessage = 
         // Using Ternary operator.
-        score < 40
+        score < 25
             ? "Low urgency. Address when capacity allows."
-            : score < 70
+            : score < 50
             ? "Moderate. Schedule for attention."
-            : score < 100
+            : score < 85
             ? "High urgency. Prioritize resolution."
             : "Critical. Immediate attention required.";
     

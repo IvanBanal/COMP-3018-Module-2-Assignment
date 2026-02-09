@@ -7,7 +7,9 @@ export const tickets: Ticket[] = [
         description: "Footer still shows 2024",
         priority: "low",
         status: "open",
-        createdAt: "2025-01-12T10:00:00.000Z"
+        // For testing purposes.
+        createdAt: "2026-02-05T10:00:00.000Z"
+        // createdAt: "2025-01-12T10:00:00.000Z"
     },
     {
         id: 2,
@@ -15,7 +17,8 @@ export const tickets: Ticket[] = [
         description: "Upload takes 30+ seconds",
         priority: "medium",
         status: "open",
-        createdAt: "2025-01-12T10:00:00.000Z"
+        createdAt: "2026-02-06T10:00:00.000Z"
+        // createdAt: "2025-01-13T10:00:00.000Z"
     },
     {
         id: 3,
@@ -23,7 +26,8 @@ export const tickets: Ticket[] = [
         description: "Dashboard takes 10+ seconds to load",
         priority: "medium",
         status: "open",
-        createdAt: "2025-01-09T10:00:00.000Z"
+        createdAt: "2026-02-02T10:00:00.000Z"
+        // createdAt: "2025-01-09T10:00:00.000Z"
     },
     {
         id: 4,
@@ -31,7 +35,8 @@ export const tickets: Ticket[] = [
         description: "Reset emails taking over 30 minutes",
         priority: "high",
         status: "open",
-        createdAt: "2025-01-10T10:00:00.000Z"
+        createdAt: "2026-02-03T10:00:00.000Z"
+        // createdAt: "2025-01-10T10:00:00.000Z"
     },
     {
         id: 5,
@@ -39,7 +44,8 @@ export const tickets: Ticket[] = [
         description: "PDF export fails silently",
         priority: "high",
         status: "open",
-        createdAt: "2025-01-06T10:00:00.000Z"
+        createdAt: "2026-01-31T10:00:00.000Z"
+        // createdAt: "2025-01-06T10:00:00.000Z"
     },
     {
         id: 6,
@@ -47,7 +53,8 @@ export const tickets: Ticket[] = [
         description: "Users report blank screen on login",
         priority: "critical",
         status: "open",
-        createdAt: "2025-01-09T10:00:00.000Z"
+        createdAt: "2026-02-02T10:00:00.000Z"
+        // createdAt: "2025-01-09T10:00:00.000Z"
     },
     {
         id: 7,
@@ -55,6 +62,7 @@ export const tickets: Ticket[] = [
         description: "Dark mode doesn't persist after refresh",
         priority: "medium",
         status: "resolved",
-        createdAt: "2025-01-05T10:00:00.000Z"
+        createdAt: "2026-01-30T10:00:00.000Z"
+        // createdAt: "2025-01-05T10:00:00.000Z"
     }
 ];
